@@ -1,0 +1,31 @@
+module looping_carry_save #(
+   SIZE = 6 :SIZE> 0
+)(
+    input clk,  // clock
+    input array[SIZE][8],
+    output out[8],
+    output ready
+) {
+    .clk(clk) {
+        // The reset conditioner is used to synchronize the reset signal to the FPGA
+        // clock. This ensures the entire FPGA comes out of reset at the same time.
+        dff total[8]
+        dff index[$clog2(6)]
+    //    edge_detector clk_edge 
+       // pulse_extender clk_extended(#MIN_PULSE_TIME_NS(20),#CLK_FREQ(100000000)) 
+    }
+    
+    always {
+       out = 0
+        ready = 0
+        if (clk == 1){
+            total.d = total.q + array[index.q]
+            index.d = index.q + 1
+        }
+        if (index.q == 6){
+            ready = 1
+            out = total.q
+            
+        }
+    }
+}

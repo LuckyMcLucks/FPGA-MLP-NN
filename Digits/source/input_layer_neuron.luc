@@ -1,0 +1,35 @@
+module input_neuron #(
+    INPUT_SIZE = 1 : INPUT_SIZE> 0   
+)(
+    input clk,
+    input in[INPUT_SIZE],  
+    input weights[INPUT_SIZE][8],
+    input bias[8],
+    output out[8]
+) 
+
+
+{
+    sig temp[INPUT_SIZE][8]
+   
+    looping_carry_save adder(.clk(clk),#SIZE(INPUT_SIZE))
+    relu relu(#LENGTH(8))
+    always {
+        repeat(i, INPUT_SIZE){
+            temp[i] = $resize($signed(in[i]),8) & weights[i]
+        }
+        
+        adder.array = temp
+        
+        out = bias 
+        relu.value = bias
+        if (adder.ready){
+            relu.value = adder.out + bias
+            out = relu.out
+        }
+        
+        
+        
+
+    }
+}

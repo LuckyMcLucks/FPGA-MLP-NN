@@ -1,0 +1,25 @@
+module choose (
+    input clk,  // clock
+    input rst,  // reset
+    input in[10][8],
+    output out[4]
+) 
+{
+    dff largest[8](.clk(clk))
+    dff index[4](.clk(clk))
+    dff temp[4](.clk(clk))
+    always {
+        
+        
+        if (index.q>8){
+            index.d = 0
+        }else{
+            index.d = index.q +1
+        }
+        if (largest.q < in[index.q]){
+            largest.d = in[index.q]
+            temp.d = index.q
+        }
+        out = temp.q 
+    }
+}

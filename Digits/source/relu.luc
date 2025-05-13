@@ -1,0 +1,14 @@
+module relu #(
+    LENGTH = 1 
+)(
+    input value[LENGTH],  // clock
+    output out[LENGTH]
+) {
+    always {
+        if (value[LENGTH-1]){
+            out = 0
+        } else{
+            out = value
+        }
+    }
+}

@@ -1,0 +1,36 @@
+module sigmoid (
+
+    input x[8],
+    output out[8]
+) {
+    sig y[8]
+    const M = 4
+    const C = 50
+    always {
+        
+        
+        if (x[7]==0){
+            y = x/M+ C
+            
+        }else{
+            y= -(-x/M)+C
+            
+            
+        }
+        if (x[7] ==1){
+          if(-x >=d150){
+            y = 5
+        }  
+        }else{
+        if(x >=d150){
+            y = 95
+        }
+        }
+        
+         
+        
+        out = y
+        
+        
+    }
+}

@@ -1,0 +1,35 @@
+module output_neuron #(
+    INPUT_SIZE = 1 : INPUT_SIZE> 0
+)(
+    input clk,
+    input in[INPUT_SIZE][8],  
+    input weights[INPUT_SIZE][8],
+    input bias[8],
+    output out[8]
+) 
+
+
+{
+    sig temp[INPUT_SIZE][8]
+    
+    looping_carry_save adder(.clk(clk),#SIZE(INPUT_SIZE))
+    sigmoid sigmoid
+    always {
+        repeat(i, INPUT_SIZE){
+            temp[i] =  weights[i] * in[i]
+        }
+        
+        adder.array = temp
+        
+        out = bias 
+        sigmoid.x = bias 
+        if (adder.ready){
+            sigmoid.x = adder.out + bias
+            out = sigmoid.out
+        }
+        
+        
+        
+
+    }
+}

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1747154567">
+  <File Type="ROUTE-PWR" Name="mlp_module_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="mlp_module.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="mlp_module_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="mlp_module_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="mlp_module_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="mlp_module.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="mlp_module_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="mlp_module_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="mlp_module_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="mlp_module_opt.dcp"/>
+  <File Type="OPT-DRC" Name="mlp_module_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="mlp_module.hwdef"/>
+  <File Type="PWROPT-DCP" Name="mlp_module_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="mlp_module_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="mlp_module_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="mlp_module_placed.dcp"/>
+  <File Type="PLACE-IO" Name="mlp_module_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="mlp_module_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="mlp_module_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="mlp_module_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="mlp_module_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="mlp_module_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="mlp_module_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="mlp_module.bin"/>
+  <File Type="PLACE-TIMING" Name="mlp_module_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="mlp_module_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="mlp_module_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="mlp_module_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="mlp_module.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="mlp_module_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="mlp_module_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="mlp_module_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="mlp_module.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="mlp_module_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="mlp_module_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="mlp_module_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="mlp_module_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="mlp_module_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="mlp_module_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="mlp_module_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="mlp_module_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="mlp_module_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="mlp_module_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="mlp_module_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="mlp_module_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="mlp_module_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="mlp_module_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="mlp_module_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="mlp_module_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="mlp_module_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="mlp_module_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="mlp_module_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="mlp_module_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="mlp_module_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="mlp_module_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="mlp_module_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="mlp_module_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="mlp_module_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="mlp_module_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="mlp_module_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="mlp_module.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="mlp_module_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="mlp_module_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="mlp_module.nky"/>
+  <File Type="BITSTR-BMM" Name="mlp_module_bd.bmm"/>
+  <File Type="PDI-FILE" Name="mlp_module.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="mlp_module_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="mlp_module_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="mlp_module.rcfi"/>
+  <File Type="CFI_FILE" Name="mlp_module.cfi"/>
+  <File Type="RNPI_FILE" Name="mlp_module.rnpi"/>
+  <File Type="NPI_FILE" Name="mlp_module.npi"/>
+  <File Type="RBD_FILE" Name="mlp_module.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="mlp_module.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="mlp_module.sysdef"/>
+  <File Type="BG-BGN" Name="mlp_module.bgn"/>
+  <File Type="BG-DRC" Name="mlp_module.drc"/>
+  <File Type="RDI-RDI" Name="mlp_module.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="mlp_module_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="mlp_module_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/source/choose.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/choose.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/hidden_neuron.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/hidden_neuron.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/input_neuron.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/input_neuron.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/layer2.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/layer2.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/layer3.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/layer3.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/looping_carry_save.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/looping_carry_save.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/output_neuron.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/output_neuron.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/relu.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/relu.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/sigmoid.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/sigmoid.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/weights.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/weights.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/mlp_module.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/mlp_module.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/alchitry_top.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/alchitry_top.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/reset_conditioner.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/reset_conditioner.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/uart_rx.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/uart_rx.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/uart_tx.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/uart_tx.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/counter.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/counter.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/edge_detector.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/edge_detector.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/pulse_extender.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/pulse_extender.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/lucid_globals.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/lucid_globals.sv"/>
+        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="mlp_module"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../constraint/alchitry.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../constraint/au_props.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream">
+      <Option Id="BinFile">1</Option>
+    </Step>
+  </Strategy>
+</GenRun>

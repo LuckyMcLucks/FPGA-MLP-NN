@@ -1,0 +1,38 @@
+module mlp_module (
+    input clk,  // clock
+    input rst,  // reset
+    input in [28][28],
+    output out[4]
+) {
+    .clk(clk){
+        #INPUT_SIZE(784){
+           input_neuron input_layer[16] 
+        }
+        #INPUT_SIZE(16){
+           hidden_neuron hidden_layer[10] 
+        }
+        #INPUT_SIZE(10){
+           output_neuron output_layer[10] 
+        }
+        choose pooling(.rst(rst))
+        
+    }
+    weights weights
+    layer2 w2
+    layer3 w3
+    always {
+        input_layer.in = 16x{{$flatten(in)}}
+        input_layer.weights = weights.out1
+        input_layer.bias= weights.out2
+        hidden_layer.in = 10x{{input_layer.out}}
+        hidden_layer.weights = w2.w
+        hidden_layer.bias= w2.b
+        output_layer.in = 10x{{hidden_layer.out}}
+        output_layer.weights = w3.w
+        output_layer.bias = w3.b
+        
+        pooling.in = output_layer.out
+        out = pooling.out
+        
+    }
+}
