@@ -1,95 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1747154567">
-  <File Type="ROUTE-PWR" Name="mlp_module_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="mlp_module.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="mlp_module_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="mlp_module_reports.tcl"/>
-  <File Type="OPT-RQA-PB" Name="mlp_module_rqa_opted.pb"/>
-  <File Type="BITSTR-MMI" Name="mlp_module.mmi"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="mlp_module_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="mlp_module_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="mlp_module_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="mlp_module_opt.dcp"/>
-  <File Type="OPT-DRC" Name="mlp_module_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="mlp_module.hwdef"/>
-  <File Type="PWROPT-DCP" Name="mlp_module_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="mlp_module_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="mlp_module_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="mlp_module_placed.dcp"/>
-  <File Type="PLACE-IO" Name="mlp_module_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="mlp_module_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="mlp_module_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="mlp_module_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="mlp_module_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="mlp_module_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="mlp_module_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BIN" Name="mlp_module.bin"/>
-  <File Type="PLACE-TIMING" Name="mlp_module_timing_summary_placed.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="mlp_module_power_routed.rpx"/>
-  <File Type="PLACE-RQA-PB" Name="mlp_module_rqa_placed.pb"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="mlp_module_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-MSK" Name="mlp_module.msk"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="mlp_module_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="mlp_module_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="mlp_module_drc_physopted.rpt"/>
-  <File Type="BITSTR-RBT" Name="mlp_module.rbt"/>
-  <File Type="PHYSOPT-TIMING" Name="mlp_module_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="mlp_module_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="mlp_module_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="mlp_module_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="mlp_module_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="mlp_module_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="mlp_module_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="mlp_module_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="mlp_module_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="mlp_module_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-RQS-PB" Name="mlp_module_rqs_routed.pb"/>
-  <File Type="ROUTE-STATUS" Name="mlp_module_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="mlp_module_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="mlp_module_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="mlp_module_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="mlp_module_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="mlp_module_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="mlp_module_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="mlp_module_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="mlp_module_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="mlp_module_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="mlp_module_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="mlp_module_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="mlp_module_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="mlp_module_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="mlp_module_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="mlp_module_bus_skew_postroute_physopted.rpt"/>
-  <File Type="BG-BIT" Name="mlp_module.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="mlp_module_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="mlp_module_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="mlp_module.nky"/>
-  <File Type="BITSTR-BMM" Name="mlp_module_bd.bmm"/>
-  <File Type="PDI-FILE" Name="mlp_module.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="mlp_module_boot.pdi"/>
-  <File Type="PL-PDI-FILE" Name="mlp_module_pld.pdi"/>
-  <File Type="RCFI_FILE" Name="mlp_module.rcfi"/>
-  <File Type="CFI_FILE" Name="mlp_module.cfi"/>
-  <File Type="RNPI_FILE" Name="mlp_module.rnpi"/>
-  <File Type="NPI_FILE" Name="mlp_module.npi"/>
-  <File Type="RBD_FILE" Name="mlp_module.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1747223165">
+  <File Type="ROUTE-PWR" Name="alchitry_top_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="alchitry_top.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="alchitry_top_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="alchitry_top_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="alchitry_top_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="alchitry_top.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="alchitry_top_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="alchitry_top_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="alchitry_top_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="alchitry_top_opt.dcp"/>
+  <File Type="OPT-DRC" Name="alchitry_top_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="alchitry_top.hwdef"/>
+  <File Type="PWROPT-DCP" Name="alchitry_top_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="alchitry_top_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="alchitry_top_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="alchitry_top_placed.dcp"/>
+  <File Type="PLACE-IO" Name="alchitry_top_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="alchitry_top_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="alchitry_top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="alchitry_top_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="alchitry_top_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="alchitry_top_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="alchitry_top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="alchitry_top.bin"/>
+  <File Type="PLACE-TIMING" Name="alchitry_top_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="alchitry_top_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="alchitry_top_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="alchitry_top_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="alchitry_top.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="alchitry_top_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="alchitry_top_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="alchitry_top_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="alchitry_top.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="alchitry_top_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="alchitry_top_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="alchitry_top_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="alchitry_top_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="alchitry_top_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="alchitry_top_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="alchitry_top_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="alchitry_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="alchitry_top_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="alchitry_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="alchitry_top_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="alchitry_top_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="alchitry_top_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="alchitry_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="alchitry_top_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="alchitry_top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="alchitry_top_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="alchitry_top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="alchitry_top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="alchitry_top_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="alchitry_top_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="alchitry_top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="alchitry_top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="alchitry_top_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="alchitry_top_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="alchitry_top_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="alchitry_top_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="alchitry_top.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="alchitry_top_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="alchitry_top_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="alchitry_top.nky"/>
+  <File Type="BITSTR-BMM" Name="alchitry_top_bd.bmm"/>
+  <File Type="PDI-FILE" Name="alchitry_top.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="alchitry_top_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="alchitry_top_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="alchitry_top.rcfi"/>
+  <File Type="CFI_FILE" Name="alchitry_top.cfi"/>
+  <File Type="RNPI_FILE" Name="alchitry_top.rnpi"/>
+  <File Type="NPI_FILE" Name="alchitry_top.npi"/>
+  <File Type="RBD_FILE" Name="alchitry_top.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="mlp_module.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="mlp_module.sysdef"/>
-  <File Type="BG-BGN" Name="mlp_module.bgn"/>
-  <File Type="BG-DRC" Name="mlp_module.drc"/>
-  <File Type="RDI-RDI" Name="mlp_module.vdi"/>
+  <File Type="BITSTR-LTX" Name="alchitry_top.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="alchitry_top.sysdef"/>
+  <File Type="BG-BGN" Name="alchitry_top.bgn"/>
+  <File Type="BG-DRC" Name="alchitry_top.drc"/>
+  <File Type="RDI-RDI" Name="alchitry_top.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="ROUTE-RQS" Name="mlp_module_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="mlp_module_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="alchitry_top_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="alchitry_top_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/source/arbiter.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/arbiter.sv"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/source/choose.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/choose.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -98,7 +107,7 @@
     <File Path="$PSRCDIR/sources_1/imports/source/hidden_neuron.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/hidden_neuron.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -107,7 +116,7 @@
     <File Path="$PSRCDIR/sources_1/imports/source/input_neuron.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/input_neuron.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -116,7 +125,7 @@
     <File Path="$PSRCDIR/sources_1/imports/source/layer2.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/layer2.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -125,7 +134,7 @@
     <File Path="$PSRCDIR/sources_1/imports/source/layer3.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/layer3.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -134,43 +143,7 @@
     <File Path="$PSRCDIR/sources_1/imports/source/looping_carry_save.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/looping_carry_save.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/source/output_neuron.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../source/output_neuron.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/source/relu.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../source/relu.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/source/sigmoid.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../source/sigmoid.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/source/weights.sv">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../source/weights.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -179,17 +152,25 @@
     <File Path="$PSRCDIR/sources_1/imports/source/mlp_module.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/mlp_module.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/source/alchitry_top.sv">
+    <File Path="$PSRCDIR/sources_1/imports/source/output_neuron.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../source/alchitry_top.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/output_neuron.sv"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/relu.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/relu.sv"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -197,9 +178,17 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/source/reset_conditioner.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/reset_conditioner.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/sigmoid.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/sigmoid.sv"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -207,9 +196,8 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/source/uart_rx.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/uart_rx.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -217,9 +205,26 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/source/uart_tx.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/uart_tx.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/weights.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/weights.sv"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/source/alchitry_top.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../source/alchitry_top.sv"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -229,7 +234,7 @@
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/counter.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -239,7 +244,7 @@
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/edge_detector.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -249,7 +254,7 @@
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/pulse_extender.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -259,7 +264,7 @@
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../source/lucid_globals.sv"/>
-        <Attr Name="ImportTime" Val="1747154416"/>
+        <Attr Name="ImportTime" Val="1747222882"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -267,7 +272,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="mlp_module"/>
+      <Option Name="TopModule" Val="alchitry_top"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

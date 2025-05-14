@@ -1,5 +1,5 @@
 module relu #(
-    LENGTH = 1 
+    LENGTH = 8
 )(
     input value[LENGTH],  // clock
     output out[LENGTH]

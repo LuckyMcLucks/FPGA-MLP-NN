@@ -10,30 +10,55 @@ module looping_carry_save #(
         input wire clk,
         input wire [(SIZE)-1:0][7:0] array,
         output reg [7:0] out,
+        input wire [7:0] bias,
+        input wire start,
         output reg ready
     );
-    logic [7:0] D_total_d, D_total_q = 0;
-    logic [2:0] D_index_d, D_index_q = 0;
+    logic [($clog2((($bits(SIZE) > $bits(1'h1) ? $bits(SIZE) : $bits(1'h1)) + 1)'(SIZE + 1'h1)))-1:0] D_index_d, D_index_q = 0;
+    logic signed [31:0] D_total_d, D_total_q = 0;
+    logic r;
+    logic [7:0] round;
+    localparam _MP_WIDTH_469206019 = 6'h20;
+    logic [31:0] M_arb_in;
+    logic [31:0] M_arb_out;
+    
+    arbiter #(
+        .WIDTH(_MP_WIDTH_469206019)
+    ) arb (
+        .in(M_arb_in),
+        .out(M_arb_out)
+    );
+    
+    
     always @* begin
         D_total_d = D_total_q;
         D_index_d = D_index_q;
         
         out = 1'h0;
-        ready = 1'h0;
-        if (clk == 1'h1) begin
-            D_total_d = (($bits(D_total_q) > $bits(array[D_index_q]) ? $bits(D_total_q) : $bits(array[D_index_q])) + 1)'(D_total_q + array[D_index_q]);
-            D_index_d = (($bits(D_index_q) > $bits(1'h1) ? $bits(D_index_q) : $bits(1'h1)) + 1)'(D_index_q + 1'h1);
-        end
-        if (D_index_q == 3'h6) begin
-            ready = 1'h1;
-            out = D_total_q;
+        r = 1'h0;
+        ready = r;
+        M_arb_in = $signed(D_total_q);
+        round = 1'h0;
+        if (start) begin
+            if (D_index_q < SIZE) begin
+                D_total_d = (($bits($signed(D_total_q)) > $bits(array[D_index_q]) ? $bits($signed(D_total_q)) : $bits(array[D_index_q])) + 1)'($signed(D_total_q) + array[D_index_q]);
+                D_index_d = (($bits(D_index_q) > $bits(1'h1) ? $bits(D_index_q) : $bits(1'h1)) + 1)'(D_index_q + 1'h1);
+            end else begin
+                D_total_d = $signed(D_total_q);
+                if (M_arb_out > 8'h80) begin
+                    round = $signed(D_total_q) >>> (($bits((M_arb_out / 8'h80)) > $bits(1'h1) ? $bits((M_arb_out / 8'h80)) : $bits(1'h1)) + 1)'((M_arb_out / 8'h80) - 1'h1);
+                    out = (($bits(round) > $bits(bias) ? $bits(round) : $bits(bias)) + 1)'(round + bias);
+                end else begin
+                    out = (($bits($signed(D_total_q)) > $bits(bias) ? $bits($signed(D_total_q)) : $bits(bias)) + 1)'($signed(D_total_q) + bias);
+                end
+            end
         end
     end
     
     
     always @(posedge (clk)) begin
-        D_total_q <= D_total_d;
         D_index_q <= D_index_d;
+        D_total_q <= D_total_d;
         
     end
 endmodule

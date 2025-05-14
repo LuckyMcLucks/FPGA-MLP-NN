@@ -18,9 +18,10 @@ module layer2 (
     localparam logic [15:0][7:0] W8 = {{-8'sh23, 8'h28, -8'sh4, 8'h25, 8'h27, 8'h19, -8'sh37, 8'h2, 8'h20, 8'h18, 8'h7, 8'h2d, -8'sh4a, 8'hc, 8'h35, 8'h25}};
     localparam logic [15:0][7:0] W9 = {{8'h10, -8'sh29, 8'h7, 8'ha, -8'sh1e, 8'h1c, 8'h37, 8'h16, 8'h2d, -8'sh1c, -8'sh30, 8'h29, 8'h34, 8'h28, -8'sh4, 8'h23}};
     localparam logic [15:0][7:0] W10 = {{8'h13, 8'h1c, -8'sh43, -8'sh2a, 8'ha, 8'h1a, 8'h24, -8'sh18, -8'sh25, 8'h28, 8'h5, -8'sh2c, 8'h9, 8'h15, 8'h23, 8'h6}};
+    localparam logic [9:0][7:0] B = {{8'h5, 8'h2, -8'sh2, 8'h0, 8'h7, 8'h4, -8'sh1, 8'h2, 8'h4, 8'h3}};
     always @* begin
         w = {{{{8'h13, 8'h1c, 8'hbd, 8'hd6, 8'ha, 8'h1a, 8'h24, 8'he8, 8'hdb, 8'h28, 8'h5, 8'hd4, 8'h9, 8'h15, 8'h23, 8'h6}}, {{8'h10, 8'hd7, 8'h7, 8'ha, 8'he2, 8'h1c, 8'h37, 8'h16, 8'h2d, 8'he4, 8'hd0, 8'h29, 8'h34, 8'h28, 8'hfc, 8'h23}}, {{8'hdd, 8'h28, 8'hfc, 8'h25, 8'h27, 8'h19, 8'hc9, 8'h2, 8'h20, 8'h18, 8'h7, 8'h2d, 8'hb6, 8'hc, 8'h35, 8'h25}}, {{8'hf6, 8'h17, 8'he5, 8'he5, 8'hf7, 8'h19, 8'hd6, 8'hed, 8'hf7, 8'h27, 8'hd0, 8'he4, 8'hfc, 8'hf, 8'hf6, 8'h22}}, {{8'h16, 8'ha, 8'h1d, 8'h2f, 8'h14, 8'he6, 8'hd9, 8'hf3, 8'h29, 8'hb, 8'h12, 8'h2d, 8'h3c, 8'hca, 8'h23, 8'he3}}, {{8'hc, 8'h7, 8'hfc, 8'he7, 8'hf0, 8'h21, 8'h23, 8'h24, 8'hdb, 8'h16, 8'h25, 8'ha, 8'he0, 8'h27, 8'hef, 8'he2}}, {{8'h6, 8'he7, 8'he2, 8'heb, 8'hf, 8'he4, 8'hd, 8'h2a, 8'h28, 8'h28, 8'hda, 8'hd5, 8'h9, 8'hdd, 8'hd8, 8'hfd}}, {{8'h29, 8'h2a, 8'h16, 8'hd0, 8'he0, 8'h27, 8'hdd, 8'h17, 8'h5, 8'h24, 8'hde, 8'h2c, 8'h8, 8'hf, 8'hed, 8'h12}}, {{8'hd1, 8'hdc, 8'hd9, 8'hf2, 8'h1e, 8'hf0, 8'hdc, 8'h2b, 8'hfe, 8'hfa, 8'hdb, 8'h1d, 8'h2b, 8'h21, 8'h26, 8'hed}}, {{8'h3, 8'hdf, 8'h3c, 8'hff, 8'h3c, 8'h5, 8'h29, 8'h15, 8'hf9, 8'h28, 8'hcc, 8'hda, 8'he9, 8'hb, 8'hd8, 8'h2c}}}};
-        b = {{8'h5, 8'h2, -8'sh2, 8'h0, 8'h7, 8'h4, -8'sh1, 8'h2, 8'h4, 8'h3}};
+        b = {{8'h5, 8'h2, 8'hfe, 8'h0, 8'h7, 8'h4, 8'hff, 8'h2, 8'h4, 8'h3}};
     end
     
     

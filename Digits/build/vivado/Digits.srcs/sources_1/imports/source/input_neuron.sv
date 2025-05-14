@@ -10,51 +10,17 @@ module input_neuron #(
         input wire clk,
         input wire [(INPUT_SIZE)-1:0] in,
         input wire [(INPUT_SIZE)-1:0][7:0] weights,
-        input wire [7:0] bias,
-        output reg [7:0] out
+        output reg [(INPUT_SIZE)-1:0][7:0] out
     );
-    logic [31:0] R_148692b8_i;
-    logic [31:0] RR_148692b8_i;
+    logic [31:0] R_311ceb95_i;
+    logic [31:0] RR_311ceb95_i;
     logic [(INPUT_SIZE)-1:0][7:0] temp;
-    localparam _MP_SIZE_828415250 = INPUT_SIZE;
-    logic [(_MP_SIZE_828415250)-1:0][7:0] M_adder_array;
-    logic [7:0] M_adder_out;
-    logic M_adder_ready;
-    
-    looping_carry_save #(
-        .SIZE(_MP_SIZE_828415250)
-    ) adder (
-        .clk(clk),
-        .array(M_adder_array),
-        .out(M_adder_out),
-        .ready(M_adder_ready)
-    );
-    
-    
-    localparam _MP_LENGTH_1554713536 = 4'h8;
-    logic [7:0] M_relu_value;
-    logic [7:0] M_relu_out;
-    
-    relu #(
-        .LENGTH(_MP_LENGTH_1554713536)
-    ) relu (
-        .value(M_relu_value),
-        .out(M_relu_out)
-    );
-    
-    
     always @* begin
-        for (RR_148692b8_i = 0; RR_148692b8_i < INPUT_SIZE; RR_148692b8_i = RR_148692b8_i + 1) begin
-      R_148692b8_i = (0) + RR_148692b8_i * (1);
-            temp[R_148692b8_i] = (4'h8)'($signed(in[R_148692b8_i])) & weights[R_148692b8_i];
+        for (RR_311ceb95_i = 0; RR_311ceb95_i < INPUT_SIZE; RR_311ceb95_i = RR_311ceb95_i + 1) begin
+      R_311ceb95_i = (0) + RR_311ceb95_i * (1);
+            temp[R_311ceb95_i] = (4'h8)'($signed(in[R_311ceb95_i])) & weights[R_311ceb95_i];
         end
-        M_adder_array = temp;
-        out = bias;
-        M_relu_value = bias;
-        if (M_adder_ready) begin
-            M_relu_value = (($bits(M_adder_out) > $bits(bias) ? $bits(M_adder_out) : $bits(bias)) + 1)'(M_adder_out + bias);
-            out = M_relu_out;
-        end
+        out = temp;
     end
     
     

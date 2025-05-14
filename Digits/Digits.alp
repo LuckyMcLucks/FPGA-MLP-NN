@@ -56,12 +56,6 @@
             {
                 "file": {
                     "type": "DiskFile",
-                    "path": "source/loop_adder.luc"
-                }
-            },
-            {
-                "file": {
-                    "type": "DiskFile",
                     "path": "source/cnl.luc"
                 }
             },
@@ -81,12 +75,6 @@
                 "file": {
                     "type": "DiskFile",
                     "path": "source/choose.luc"
-                }
-            },
-            {
-                "file": {
-                    "type": "DiskFile",
-                    "path": "source/weights.luc"
                 }
             },
             {
@@ -116,6 +104,12 @@
             {
                 "file": {
                     "type": "DiskFile",
+                    "path": "source/weights.luc"
+                }
+            },
+            {
+                "file": {
+                    "type": "DiskFile",
                     "path": "source/layer2.luc"
                 }
             },
@@ -123,6 +117,12 @@
                 "file": {
                     "type": "DiskFile",
                     "path": "source/layer3.luc"
+                }
+            },
+            {
+                "file": {
+                    "type": "Component",
+                    "path": "Miscellaneous/arbiter.luc"
                 }
             }
         ],

@@ -11,14 +11,18 @@ testbench cnl {
     const TEST = {4b1111,4b1111,4b1111,4b1111}
     sig pea[2][4]
     sigmoid sigmoid
+    looping_carry_save adder(.clk(clk),#SIZE(3))
     test myTest {
         sigmoid.x = -40
+        adder.array = {8d9,8d8,8d28}
+        adder.start =1
+        adder.bias = 8d1
         clk = 0 // initialize the value
-        $tick() // capture initial state
-
-        $print(sigmoid.out)
-        $print(--20)
-        
+        $tick_clock() // capture initial state
+        $tick_clock()
+   $tick_clock()
+        $tick_clock()
+        $tick_clock()
         // test goes here
     }
 }

@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log mlp_module.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mlp_module.tcl
+EAStep vivado -log alchitry_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source alchitry_top.tcl
