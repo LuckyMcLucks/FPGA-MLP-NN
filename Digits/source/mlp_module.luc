@@ -4,9 +4,8 @@ module mlp_module (
     input in [28][28][1],
     output out[4]
 ) {
-    enum STATE{LAYER1,}
-    .clk(clk){
-        dff state
+    
+    .clk(clk){    
         #SIZE(784){
         looping_carry_save adder1 [16] 
             }
@@ -28,6 +27,8 @@ module mlp_module (
         choose pooling(.rst(rst))
         
     }
+    enum States{DEFAULT,LAYER1,LAYER2,LAYER3}
+    dff state[$width(States)](#INIT(States.DEFAULT),.clk(clk))    
     weights weights
     layer2 w2
     layer3 w3
@@ -37,28 +38,49 @@ module mlp_module (
     always {
         input_layer.in = 16x{{$flatten(in)}}
         adder1.array = input_layer.out
-        adder1.start =1
         input_layer.weights = weights.out1
         adder1.bias = weights.out2
         relu.value  =adder1.out
         
         hidden_layer.in = 10x{{relu.out}}
         adder2.array = hidden_layer.out
-        adder2.start = adder1.ready
         hidden_layer.weights = w2.w
         adder2.bias = w2.b
         relu2.value  = adder2.out
-        
-        
+
         output_layer.in = 10x{{relu2.out}}
-        adder3.start = adder2.ready
         adder3.array = output_layer.out
         output_layer.weights = w3.w
         adder3.bias = w3.b
         sigmoid.x = adder3.out
         
         pooling.in = sigmoid.out
+        
+        adder1.start = 16h0
+        adder2.start = 10h0
+        adder3.start = 10h0
         out = pooling.out
+        case (state.q){
+            States.DEFAULT:
+            adder1.start =16h0
+            state.d =States.LAYER1
+            States.LAYER1:
+            adder1.start =16hFFFF
+            if (adder1.ready){
+             state.d =States.LAYER2       
+                }
+            States.LAYER2:
+            adder2.start =10hFFFF
+            if (adder2.ready){
+             state.d =States.LAYER3      
+                }
+            States.LAYER3:
+            adder3.start =10hFFFF
+            if (adder2.ready){
+             state.d =States.LAYER3      
+                }
+            
+        }
         
     }
 }

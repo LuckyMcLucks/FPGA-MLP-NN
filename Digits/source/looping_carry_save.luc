@@ -21,7 +21,7 @@ module looping_carry_save #(
     sig round[8]
     arbiter arb(#WIDTH(32))
     always {
-        out =0
+        out =total.q
         r =0
         ready = r
         arb.in = total.q
