@@ -76,31 +76,35 @@ create_project -in_memory -part xc7a35tftg256-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.cache/wt [current_project]
 set_property parent.project_path C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property ip_output_repo c:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/arbiter.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/choose.sv
-  C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/hidden_neuron.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/input_neuron.sv
-  C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/layer2.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/layer3.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/looping_carry_save.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/mlp_module.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/output_neuron.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/relu.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/reset_conditioner.sv
-  C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/sigmoid.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/uart_rx.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/uart_tx.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/weights.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/alchitry_top.sv
 }
+read_ip -quiet C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
+set_property used_in_implementation false [get_files -all c:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.gen/sources_1/ip/clk_wiz_1/clk_wiz_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -116,6 +120,8 @@ set_property used_in_implementation false [get_files C:/Users/weiya/OneDrive/Des
 read_xdc C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/constraint/au_props.xdc
 set_property used_in_implementation false [get_files C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/constraint/au_props.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

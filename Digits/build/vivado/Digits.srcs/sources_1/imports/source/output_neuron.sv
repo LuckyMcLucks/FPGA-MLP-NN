@@ -8,17 +8,17 @@ module output_neuron #(
         parameter INPUT_SIZE = 1'h1
     ) (
         input wire clk,
-        input wire [(INPUT_SIZE)-1:0][7:0] in,
-        input wire [(INPUT_SIZE)-1:0][7:0] weights,
-        output reg [(INPUT_SIZE)-1:0][7:0] out
+        input wire signed [(INPUT_SIZE)-1:0][15:0] in,
+        input wire signed [(INPUT_SIZE)-1:0][15:0] weights,
+        output reg [(INPUT_SIZE)-1:0][31:0] out
     );
-    logic [31:0] R_6ba40460_i;
-    logic [31:0] RR_6ba40460_i;
-    logic [(INPUT_SIZE)-1:0][7:0] temp;
+    logic [31:0] R_299cdd7e_i;
+    logic [31:0] RR_299cdd7e_i;
+    logic [(INPUT_SIZE)-1:0][31:0] temp;
     always @* begin
-        for (RR_6ba40460_i = 0; RR_6ba40460_i < INPUT_SIZE; RR_6ba40460_i = RR_6ba40460_i + 1) begin
-      R_6ba40460_i = (0) + RR_6ba40460_i * (1);
-            temp[R_6ba40460_i] = ($bits(weights[R_6ba40460_i])+$bits(in[R_6ba40460_i]))'(weights[R_6ba40460_i] * in[R_6ba40460_i]);
+        for (RR_299cdd7e_i = 0; RR_299cdd7e_i < INPUT_SIZE; RR_299cdd7e_i = RR_299cdd7e_i + 1) begin
+      R_299cdd7e_i = (0) + RR_299cdd7e_i * (1);
+            temp[R_299cdd7e_i] = ($bits(weights[R_299cdd7e_i])+$bits(in[R_299cdd7e_i]))'(weights[R_299cdd7e_i] * in[R_299cdd7e_i]);
         end
         out = temp;
     end

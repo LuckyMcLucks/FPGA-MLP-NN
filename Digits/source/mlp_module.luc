@@ -9,31 +9,25 @@ module mlp_module (
         #SIZE(784){
         looping_carry_save adder1 [16] 
             }
-         #SIZE(16){
-        looping_carry_save adder2 [10] 
-            }
-        #SIZE(10){
+
+        #SIZE(16){
         looping_carry_save adder3 [10] 
             }
         #INPUT_SIZE(784){
            input_neuron input_layer[16] 
         }
+
         #INPUT_SIZE(16){
-           hidden_neuron hidden_layer[10] 
-        }
-        #INPUT_SIZE(10){
            output_neuron output_layer[10] 
         }
         choose pooling(.rst(rst))
         
     }
     enum States{DEFAULT,LAYER1,LAYER2,LAYER3}
-    dff state[$width(States)](#INIT(States.DEFAULT),.clk(clk))    
+    dff state$width(States),.clk(clk))    
     weights weights
-    layer2 w2
     layer3 w3
     relu relu[16] 
-    relu relu2[10] 
     sigmoid sigmoid[10]
     always {
         input_layer.in = 16x{{$flatten(in)}}
@@ -42,13 +36,9 @@ module mlp_module (
         adder1.bias = weights.out2
         relu.value  =adder1.out
         
-        hidden_layer.in = 10x{{relu.out}}
-        adder2.array = hidden_layer.out
-        hidden_layer.weights = w2.w
-        adder2.bias = w2.b
-        relu2.value  = adder2.out
 
-        output_layer.in = 10x{{relu2.out}}
+
+        output_layer.in = 10x{{relu.out}}
         adder3.array = output_layer.out
         output_layer.weights = w3.w
         adder3.bias = w3.b
@@ -57,7 +47,7 @@ module mlp_module (
         pooling.in = sigmoid.out
         
         adder1.start = 16h0
-        adder2.start = 10h0
+
         adder3.start = 10h0
         out = pooling.out
         case (state.q){
@@ -66,17 +56,13 @@ module mlp_module (
             state.d =States.LAYER1
             States.LAYER1:
             adder1.start =16hFFFF
-            if (adder1.ready){
-             state.d =States.LAYER2       
+            if (&adder1.ready){
+             state.d =States.LAYER3       
                 }
-            States.LAYER2:
-            adder2.start =10hFFFF
-            if (adder2.ready){
-             state.d =States.LAYER3      
-                }
+
             States.LAYER3:
             adder3.start =10hFFFF
-            if (adder2.ready){
+            if (&adder3.ready){
              state.d =States.LAYER3      
                 }
             

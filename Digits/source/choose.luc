@@ -1,11 +1,11 @@
 module choose (
     input clk,  // clock
     input rst,  // reset
-    input in[10][8],
+    signed input in[10][32],
     output out[4]
 ) 
 {
-    dff largest[8](.clk(clk))
+   signed dff largest[32](.clk(clk))
     dff index[4](.clk(clk))
     dff temp[4](.clk(clk))
     always {

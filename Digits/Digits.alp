@@ -56,12 +56,6 @@
             {
                 "file": {
                     "type": "DiskFile",
-                    "path": "source/cnl.luc"
-                }
-            },
-            {
-                "file": {
-                    "type": "DiskFile",
                     "path": "source/relu.luc"
                 }
             },
@@ -110,12 +104,6 @@
             {
                 "file": {
                     "type": "DiskFile",
-                    "path": "source/layer2.luc"
-                }
-            },
-            {
-                "file": {
-                    "type": "DiskFile",
                     "path": "source/layer3.luc"
                 }
             },
@@ -123,6 +111,18 @@
                 "file": {
                     "type": "Component",
                     "path": "Miscellaneous/arbiter.luc"
+                }
+            },
+            {
+                "file": {
+                    "type": "DiskFile",
+                    "path": "source/neuron_test.luc"
+                }
+            },
+            {
+                "file": {
+                    "type": "DiskFile",
+                    "path": "source/ug.luc"
                 }
             }
         ],
@@ -132,8 +132,57 @@
                     "type": "Component",
                     "path": "Constraints/alchitry.acf"
                 }
+            },
+            {
+                "file": {
+                    "type": "Component",
+                    "path": "Constraints/io_v1_pulldown.acf"
+                }
             }
         ],
-        "ipCores": []
+        "ipCores": [
+            {
+                "name": "clk_wiz_0",
+                "stub": {
+                    "file": {
+                        "type": "DiskFile",
+                        "path": "cores/clk_wiz_0/clk_wiz_0_stub.v"
+                    }
+                },
+                "files": [
+                    {
+                        "path": "cores/clk_wiz_0/clk_wiz_0.xci"
+                    }
+                ]
+            },
+            {
+                "name": "clk_wiz_1",
+                "stub": {
+                    "file": {
+                        "type": "DiskFile",
+                        "path": "cores/clk_wiz_1/clk_wiz_1_stub.v"
+                    }
+                },
+                "files": [
+                    {
+                        "path": "cores/clk_wiz_1/clk_wiz_1.xci"
+                    }
+                ]
+            },
+            {
+                "name": "clk_wiz_2",
+                "stub": {
+                    "file": {
+                        "type": "DiskFile",
+                        "path": "cores/clk_wiz_2/clk_wiz_2_stub.v"
+                    }
+                },
+                "files": [
+                    {
+                        "path": "cores/clk_wiz_2/clk_wiz_2.xci"
+                    }
+                ]
+            }
+        ]
     }
 }

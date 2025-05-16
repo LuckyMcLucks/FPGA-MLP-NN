@@ -5,7 +5,7 @@
 */
 
 module relu #(
-        parameter LENGTH = 4'h8
+        parameter LENGTH = 5'h10
     ) (
         input wire [(LENGTH)-1:0] value,
         output reg [(LENGTH)-1:0] out

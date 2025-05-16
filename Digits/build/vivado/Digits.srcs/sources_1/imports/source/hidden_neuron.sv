@@ -8,19 +8,20 @@ module hidden_neuron #(
         parameter INPUT_SIZE = 1'h1
     ) (
         input wire clk,
-        input wire [(INPUT_SIZE)-1:0][7:0] in,
-        input wire [(INPUT_SIZE)-1:0][7:0] weights,
-        output reg [(INPUT_SIZE)-1:0][7:0] out
+        input wire signed [(INPUT_SIZE)-1:0][15:0] in,
+        input wire signed [(INPUT_SIZE)-1:0][15:0] weights,
+        output reg [(INPUT_SIZE)-1:0][31:0] out
     );
-    logic [31:0] R_7ebe8357_i;
-    logic [31:0] RR_7ebe8357_i;
-    logic [(INPUT_SIZE)-1:0][7:0] temp;
+    logic [31:0] R_466c4d8d_i;
+    logic [31:0] RR_466c4d8d_i;
+    logic signed [(INPUT_SIZE)-1:0][31:0] temp;
+    logic signed [(INPUT_SIZE)-1:0][15:0] temp2;
     always @* begin
-        for (RR_7ebe8357_i = 0; RR_7ebe8357_i < INPUT_SIZE; RR_7ebe8357_i = RR_7ebe8357_i + 1) begin
-      R_7ebe8357_i = (0) + RR_7ebe8357_i * (1);
-            temp[R_7ebe8357_i] = ($bits(weights[R_7ebe8357_i])+$bits(in[R_7ebe8357_i]))'(weights[R_7ebe8357_i] * in[R_7ebe8357_i]);
+        for (RR_466c4d8d_i = 0; RR_466c4d8d_i < INPUT_SIZE; RR_466c4d8d_i = RR_466c4d8d_i + 1) begin
+      R_466c4d8d_i = (0) + RR_466c4d8d_i * (1);
+            temp[R_466c4d8d_i] = (($bits(weights[R_466c4d8d_i])+$bits(in[R_466c4d8d_i]))'(weights[R_466c4d8d_i] * in[R_466c4d8d_i]));
         end
-        out = temp;
+        out = $signed(temp);
     end
     
     

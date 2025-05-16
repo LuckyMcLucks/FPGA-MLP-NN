@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Wed May 14 19:47:29 2025
+| Date         : Fri May 16 20:55:13 2025
 | Host         : Ideapad_S340 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file alchitry_top_control_sets_placed.rpt
 | Design       : alchitry_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     5 |
-|    Minimum number of control sets                        |     5 |
+| Total control sets                                       |    33 |
+|    Minimum number of control sets                        |    33 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    16 |
+| Unused register locations in slices containing registers |   147 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     5 |
+| Total control sets |    33 |
 | >= 0 to < 4        |     0 |
-| >= 4 to < 6        |     2 |
+| >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     1 |
-| >= 14 to < 16      |     2 |
-| >= 16              |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     3 |
+| >= 16              |    27 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              12 |            5 |
-| No           | No                    | Yes                    |               4 |            2 |
-| No           | Yes                   | No                     |              18 |            7 |
-| Yes          | No                    | No                     |               0 |            0 |
+| No           | No                    | No                     |              15 |            7 |
+| No           | No                    | Yes                    |               4 |            1 |
+| No           | Yes                   | No                     |              22 |            8 |
+| Yes          | No                    | No                     |             822 |          263 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              14 |            5 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -70,14 +70,42 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+---------------+----------------------------+------------------+----------------+--------------+
-|  Clock Signal  | Enable Signal |      Set/Reset Signal      | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+---------------+----------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG |               | reset_cond/M_reset_cond_in |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG |               | reset_cond/Q[0]            |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG |               |                            |                5 |             12 |         2.40 |
-|  clk_IBUF_BUFG |               | tx/D_ctr_q[13]_i_1_n_0     |                5 |             14 |         2.80 |
-|  clk_IBUF_BUFG | rx/D_ctr_d    | rx/D_ctr_q[13]_i_1_n_0     |                5 |             14 |         2.80 |
-+----------------+---------------+----------------------------+------------------+----------------+--------------+
++----------------------------+----------------------------------------------------------------+--------------------------------------+------------------+----------------+--------------+
+|        Clock Signal        |                          Enable Signal                         |           Set/Reset Signal           | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------+----------------------------------------------------------------+--------------------------------------+------------------+----------------+--------------+
+|  slow_clock/inst/clk_out10 |                                                                | mlp/pooling/D_index_q[3]_i_1__25_n_0 |                1 |              4 |         4.00 |
+|  slow_clock/inst/clk_out10 |                                                                | reset_cond/M_reset_cond_in           |                1 |              4 |         4.00 |
+|  slow_clock/inst/clk_out10 |                                                                | reset_cond/Q[0]                      |                2 |              4 |         2.00 |
+|  slow_clock/inst/clk_out10 | rx/D_ctr_d                                                     | rx/D_ctr_q[13]_i_1_n_0               |                5 |             14 |         2.80 |
+|  slow_clock/inst/clk_out10 |                                                                | tx/D_ctr_q[13]_i_1_n_0               |                5 |             14 |         2.80 |
+|  slow_clock/inst/clk_out10 |                                                                |                                      |                7 |             15 |         2.14 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[12].adder1/D_total_d              |                                      |                9 |             26 |         2.89 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[0].adder1/D_total_d               |                                      |               10 |             26 |         2.60 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[11].adder1/D_total_d              |                                      |                9 |             26 |         2.89 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[2].adder1/D_total_d               |                                      |                8 |             26 |         3.25 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[15].adder1/D_total_d              |                                      |                8 |             26 |         3.25 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[13].adder1/D_total_d              |                                      |               10 |             26 |         2.60 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[14].adder1/D_total_d              |                                      |                8 |             26 |         3.25 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[10].adder1/D_total_d              |                                      |               11 |             26 |         2.36 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[9].adder1/D_total_d               |                                      |                7 |             26 |         3.71 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[7].adder1/D_total_d               |                                      |                9 |             26 |         2.89 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[8].adder1/D_total_d               |                                      |                9 |             26 |         2.89 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[5].adder1/D_total_d               |                                      |                7 |             26 |         3.71 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[6].adder1/D_total_d               |                                      |               10 |             26 |         2.60 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[4].adder1/D_total_d               |                                      |                9 |             26 |         2.89 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[3].adder1/D_total_d               |                                      |               10 |             26 |         2.60 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_2043118135[1].adder1/D_total_d               |                                      |                8 |             26 |         3.25 |
+|  slow_clock/inst/clk_out10 | mlp/pooling/p_0_in_0                                           |                                      |               11 |             36 |         3.27 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[8].adder3/D_index_q[4]_i_1__22_n_0 |                                      |               10 |             37 |         3.70 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[9].adder3/D_index_q[4]_i_1__23_n_0 |                                      |               11 |             37 |         3.36 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[5].adder3/D_index_q[4]_i_1__20_n_0 |                                      |               11 |             37 |         3.36 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[6].adder3/D_index_q[4]_i_1__21_n_0 |                                      |               12 |             37 |         3.08 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[7].adder3/D_total_d                |                                      |               11 |             37 |         3.36 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[1].adder3/D_index_q[4]_i_1__16_n_0 |                                      |               12 |             37 |         3.08 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[0].adder3/D_index_q[4]_i_1__15_n_0 |                                      |               11 |             37 |         3.36 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[2].adder3/D_index_q[4]_i_1__17_n_0 |                                      |               10 |             37 |         3.70 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[3].adder3/D_index_q[4]_i_1__18_n_0 |                                      |               11 |             37 |         3.36 |
+|  slow_clock/inst/clk_out10 | mlp/forLoop_idx_0_628266401[4].adder3/D_index_q[4]_i_1__19_n_0 |                                      |               11 |             37 |         3.36 |
++----------------------------+----------------------------------------------------------------+--------------------------------------+------------------+----------------+--------------+
 
 

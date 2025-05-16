@@ -1,0 +1,18 @@
+testbench awe {
+    sig clk
+
+    fun tick_clock() {
+        clk = 1
+        $silent_tick() // tick without capturing signals
+        clk = 0
+        $tick()
+    }
+
+    test myTest {
+        clk = 0 // initialize the value
+        $print((16b11100110)/128)
+        $tick() // capture initial state
+
+        // test goes here
+    }
+}

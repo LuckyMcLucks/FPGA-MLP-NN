@@ -1,0 +1,21 @@
+testbench neuron_test {
+    sig clk
+
+    fun tick_clock() {
+        clk = 1
+        $silent_tick() // tick without capturing signals
+        clk = 0
+        $tick()
+    }
+    input_neuron i_neuron(#INPUT_SIZE(5),.clk(clk))
+    test myTest {
+        i_neuron.in = 5b01101
+        i_neuron.weights = {16b1, -16b10, 16b1, 16b0, -16b1010}
+        $print(i_neuron.out[0])
+        
+        clk = 0 // initialize the value
+        $tick() // capture initial state
+
+        // test goes here
+    }
+}

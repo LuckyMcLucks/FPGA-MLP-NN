@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Wed May 14 19:48:14 2025
+| Date         : Fri May 16 20:56:27 2025
 | Host         : Ideapad_S340 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file alchitry_top_methodology_drc_routed.rpt -pb alchitry_top_methodology_drc_routed.pb -rpx alchitry_top_methodology_drc_routed.rpx
 | Design       : alchitry_top
@@ -23,28 +23,20 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 3
-+-----------+----------+-------------------------------+------------+
-| Rule      | Severity | Description                   | Violations |
-+-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 3          |
-+-----------+----------+-------------------------------+------------+
+             Violations found: 1
++--------+----------+--------------------------------------------------------+------------+
+| Rule   | Severity | Description                                            | Violations |
++--------+----------+--------------------------------------------------------+------------+
+| XDCC-7 | Warning  | Scoped Clock constraint overwritten on the same source | 1          |
++--------+----------+--------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-18#1 Warning
-Missing input or output delay  
-An input delay is missing on rst_n relative to the rising and/or falling clock edge(s) of clk_0.
-Related violations: <none>
-
-TIMING-18#2 Warning
-Missing input or output delay  
-An input delay is missing on usb_rx relative to the rising and/or falling clock edge(s) of clk_0.
-Related violations: <none>
-
-TIMING-18#3 Warning
-Missing input or output delay  
-An output delay is missing on usb_tx relative to the rising and/or falling clock edge(s) of clk_0.
+XDCC-7#1 Warning
+Scoped Clock constraint overwritten on the same source  
+A new clock constraint create_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
+New: create_clock -period 10.000 -name clk_0 -waveform {0.000 5.000} [get_ports clk] (Source: C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/constraint/alchitry.xdc (Line: 4))
+Previous: create_clock -period 10.000 [get_ports clk] (Source: c:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.gen/sources_1/ip/clk_wiz_1/clk_wiz_1.xdc (Line: 53))
 Related violations: <none>
 
 

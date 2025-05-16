@@ -3,19 +3,19 @@ module input_neuron #(
 )(
     input clk,
     input in[INPUT_SIZE],  
-    input weights[INPUT_SIZE][8],
-    output out[INPUT_SIZE][8]
+    input weights[INPUT_SIZE][16],
+    output out[INPUT_SIZE][16]
     
 ) 
 
 
 {
-    sig temp[INPUT_SIZE][8]
+    sig temp[INPUT_SIZE][16]
    
     
     always {
         repeat(i, INPUT_SIZE){
-            temp[i] = $resize($signed(in[i]),8) & weights[i]
+            temp[i] = $resize($signed(in[i]),16) & weights[i]
         }
         
         

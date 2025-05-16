@@ -2,14 +2,14 @@ module output_neuron #(
     INPUT_SIZE = 1 : INPUT_SIZE> 0
 )(
     input clk,
-    input in[INPUT_SIZE][8],  
-    input weights[INPUT_SIZE][8],
-    output out[INPUT_SIZE][8]
+    signed input in[INPUT_SIZE][16],  
+    signed input weights[INPUT_SIZE][16],
+    output out[INPUT_SIZE][32]
 ) 
 
 
 {
-    sig temp[INPUT_SIZE][8]
+    sig temp[INPUT_SIZE][32]
     
     always {
         repeat(i, INPUT_SIZE){

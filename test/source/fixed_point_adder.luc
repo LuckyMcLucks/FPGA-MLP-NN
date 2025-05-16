@@ -1,0 +1,9 @@
+module fixed_point_adder (
+    input in[16],
+    output out
+) {
+    always {
+        
+        out = 0
+    }
+}

@@ -5,23 +5,14 @@
 */
 
 module layer3 (
-        output reg [9:0][9:0][7:0] w,
-        output reg [9:0][7:0] b
+        output reg [9:0][15:0][15:0] w,
+        output reg [9:0][31:0] b
     );
-    localparam logic [9:0][7:0] W1 = {{-8'sh19, 8'h27, -8'sh2d, -8'sh1b, 8'h8, 8'h4f, 8'hd, -8'sh2f, -8'sh1d, 8'hc}};
-    localparam logic [9:0][7:0] W2 = {{8'h25, -8'sh23, 8'h26, 8'hf, -8'sh10, -8'sh24, 8'h2f, 8'h3c, 8'h1, -8'sh19}};
-    localparam logic [9:0][7:0] W3 = {{8'h4b, -8'sh9, -8'sh1d, -8'sh14, -8'sh1, 8'h33, 8'h13, -8'sh2b, -8'sh1c, -8'sh21}};
-    localparam logic [9:0][7:0] W4 = {{8'h27, 8'he, 8'h7, 8'h10, -8'sh4d, -8'sh18, 8'h33, 8'h30, -8'sh1b, 8'h20}};
-    localparam logic [9:0][7:0] W5 = {{8'h4, -8'sh50, -8'sh28, 8'h5, 8'h33, -8'sh29, -8'sh7, -8'shc, -8'sh9, 8'h1f}};
-    localparam logic [9:0][7:0] W6 = {{-8'sh23, 8'h2a, -8'sh35, -8'shb, 8'h17, 8'h1c, 8'h27, -8'sh3, 8'h6, 8'h2}};
-    localparam logic [9:0][7:0] W7 = {{8'h3, 8'h1, 8'h1b, 8'hd, -8'sh1, 8'h2, 8'hb, -8'sh35, 8'h31, 8'h29}};
-    localparam logic [9:0][7:0] W8 = {{-8'sh2e, -8'sh3a, 8'h34, -8'sh2a, 8'h7, -8'sh6, 8'h16, 8'h42, -8'shb, 8'h2e}};
-    localparam logic [9:0][7:0] W9 = {{8'he, 8'h22, -8'sh36, -8'sh15, -8'sh1f, -8'sh40, -8'sh8, 8'h12, 8'h15, 8'h28}};
-    localparam logic [9:0][7:0] W10 = {{-8'sh7, 8'h19, -8'she, -8'she, 8'h34, -8'sh3f, 8'h5, -8'sh1d, -8'sh4f, 8'h36}};
-    localparam logic [9:0][7:0] B = {{-8'sh14, -8'sh12, -8'sh1, -8'she, 8'h15, 8'h11, 8'h12, -8'sh7, 8'h7, -8'sh5}};
+    localparam logic [9:0][15:0][15:0] W1 = {{{{-16'sh49, 16'h18, -16'sh2d, 16'h19, -16'sh23, -16'sh2a, -16'sh1a, 16'hd, 16'h23, 16'h2, 16'h2b, 16'h2a, -16'sh26, 16'h16, 16'h0, -16'sh21}}, {{-16'sh2d, -16'sh28, -16'sh1a, -16'sha, -16'sh5, 16'h2, -16'sh11, -16'sh11, -16'sh1e, 16'h30, -16'sh1, -16'sh17, -16'shf, 16'h0, -16'sh15, 16'h2d}}, {{16'h35, -16'sh33, -16'sh12, 16'h20, -16'sh47, 16'h1e, 16'h23, -16'sh28, -16'sh2b, -16'sh1e, -16'sh2a, 16'h2d, -16'sh17, 16'he, -16'sh30, 16'h26}}, {{16'h26, 16'h31, -16'sh2c, -16'shc, 16'h38, 16'h8, 16'ha, 16'h9, 16'h18, 16'h0, -16'sh1f, -16'sh3c, -16'sh36, -16'she, 16'h2, 16'h18}}, {{-16'sh3d, 16'h42, -16'sh1b, 16'h16, -16'sh36, -16'sh21, 16'h2c, -16'sh3, -16'sh2d, -16'sh3, 16'h24, -16'sh17, 16'h21, -16'sh1c, 16'h21, -16'shc}}, {{-16'shf, 16'h14, -16'sh2a, -16'sha, 16'h5, 16'h11, -16'sh2e, 16'h28, -16'sh15, -16'sh2, -16'sh28, 16'h1d, -16'sh3f, 16'h22, -16'sh27, -16'sh1b}}, {{16'h17, -16'sh2f, 16'h1d, 16'h1f, -16'sh37, 16'h10, -16'sh2b, 16'h1b, 16'h15, 16'h2, 16'hc, -16'sh31, 16'h33, -16'sh6, -16'she, -16'sh18}}, {{16'h1b, 16'h39, 16'h11, -16'sh2d, -16'sh18, 16'h19, 16'h20, -16'sh21, -16'sh17, 16'h11, -16'sh2f, -16'sh25, -16'sh15, -16'sh26, 16'h2d, -16'sh18}}, {{-16'sh35, -16'shc, -16'sh2b, -16'shf, 16'h30, 16'h12, -16'sh23, -16'sh31, 16'h18, -16'sh36, 16'h1, -16'she, 16'h19, 16'h15, -16'sh2c, 16'h24}}, {{-16'sh2d, 16'h30, -16'sh23, 16'h1d, -16'sh2c, 16'ha, 16'h26, -16'sh2b, -16'sh28, 16'h42, -16'sh2, -16'sh40, -16'sh21, -16'sh21, 16'h21, -16'sh1e}}}};
+    localparam logic [9:0][31:0] B = {{-32'sh1e, -32'sh1e, -32'sh1e, -32'sh1e, -32'sh1e, -32'sh1e, -32'sh1e, -32'sh1e, -32'sh1e, -32'sh1e}};
     always @* begin
-        w = {{{{8'hf9, 8'h19, 8'hf2, 8'hf2, 8'h34, 8'hc1, 8'h5, 8'he3, 8'hb1, 8'h36}}, {{8'he, 8'h22, 8'hca, 8'heb, 8'he1, 8'hc0, 8'hf8, 8'h12, 8'h15, 8'h28}}, {{8'hd2, 8'hc6, 8'h34, 8'hd6, 8'h7, 8'hfa, 8'h16, 8'h42, 8'hf5, 8'h2e}}, {{8'h3, 8'h1, 8'h1b, 8'hd, 8'hff, 8'h2, 8'hb, 8'hcb, 8'h31, 8'h29}}, {{8'hdd, 8'h2a, 8'hcb, 8'hf5, 8'h17, 8'h1c, 8'h27, 8'hfd, 8'h6, 8'h2}}, {{8'h4, 8'hb0, 8'hd8, 8'h5, 8'h33, 8'hd7, 8'hf9, 8'hf4, 8'hf7, 8'h1f}}, {{8'h27, 8'he, 8'h7, 8'h10, 8'hb3, 8'he8, 8'h33, 8'h30, 8'he5, 8'h20}}, {{8'h4b, 8'hf7, 8'he3, 8'hec, 8'hff, 8'h33, 8'h13, 8'hd5, 8'he4, 8'hdf}}, {{8'h25, 8'hdd, 8'h26, 8'hf, 8'hf0, 8'hdc, 8'h2f, 8'h3c, 8'h1, 8'he7}}, {{8'he7, 8'h27, 8'hd3, 8'he5, 8'h8, 8'h4f, 8'hd, 8'hd1, 8'he3, 8'hc}}}};
-        b = {{8'hec, 8'hee, 8'hff, 8'hf2, 8'h15, 8'h11, 8'h12, 8'hf9, 8'h7, 8'hfb}};
+        w = {{{{16'hffb7, 16'h18, 16'hffd3, 16'h19, 16'hffdd, 16'hffd6, 16'hffe6, 16'hd, 16'h23, 16'h2, 16'h2b, 16'h2a, 16'hffda, 16'h16, 16'h0, 16'hffdf}}, {{16'hffd3, 16'hffd8, 16'hffe6, 16'hfff6, 16'hfffb, 16'h2, 16'hffef, 16'hffef, 16'hffe2, 16'h30, 16'hffff, 16'hffe9, 16'hfff1, 16'h0, 16'hffeb, 16'h2d}}, {{16'h35, 16'hffcd, 16'hffee, 16'h20, 16'hffb9, 16'h1e, 16'h23, 16'hffd8, 16'hffd5, 16'hffe2, 16'hffd6, 16'h2d, 16'hffe9, 16'he, 16'hffd0, 16'h26}}, {{16'h26, 16'h31, 16'hffd4, 16'hfff4, 16'h38, 16'h8, 16'ha, 16'h9, 16'h18, 16'h0, 16'hffe1, 16'hffc4, 16'hffca, 16'hfff2, 16'h2, 16'h18}}, {{16'hffc3, 16'h42, 16'hffe5, 16'h16, 16'hffca, 16'hffdf, 16'h2c, 16'hfffd, 16'hffd3, 16'hfffd, 16'h24, 16'hffe9, 16'h21, 16'hffe4, 16'h21, 16'hfff4}}, {{16'hfff1, 16'h14, 16'hffd6, 16'hfff6, 16'h5, 16'h11, 16'hffd2, 16'h28, 16'hffeb, 16'hfffe, 16'hffd8, 16'h1d, 16'hffc1, 16'h22, 16'hffd9, 16'hffe5}}, {{16'h17, 16'hffd1, 16'h1d, 16'h1f, 16'hffc9, 16'h10, 16'hffd5, 16'h1b, 16'h15, 16'h2, 16'hc, 16'hffcf, 16'h33, 16'hfffa, 16'hfff2, 16'hffe8}}, {{16'h1b, 16'h39, 16'h11, 16'hffd3, 16'hffe8, 16'h19, 16'h20, 16'hffdf, 16'hffe9, 16'h11, 16'hffd1, 16'hffdb, 16'hffeb, 16'hffda, 16'h2d, 16'hffe8}}, {{16'hffcb, 16'hfff4, 16'hffd5, 16'hfff1, 16'h30, 16'h12, 16'hffdd, 16'hffcf, 16'h18, 16'hffca, 16'h1, 16'hfff2, 16'h19, 16'h15, 16'hffd4, 16'h24}}, {{16'hffd3, 16'h30, 16'hffdd, 16'h1d, 16'hffd4, 16'ha, 16'h26, 16'hffd5, 16'hffd8, 16'h42, 16'hfffe, 16'hffc0, 16'hffdf, 16'hffdf, 16'h21, 16'hffe2}}}};
+        b = {{32'hffffffe2, 32'hffffffe2, 32'hffffffe2, 32'hffffffe2, 32'hffffffe2, 32'hffffffe2, 32'hffffffe2, 32'hffffffe2, 32'hffffffe2, 32'hffffffe2}};
     end
     
     

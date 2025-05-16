@@ -9,16 +9,16 @@ module input_neuron #(
     ) (
         input wire clk,
         input wire [(INPUT_SIZE)-1:0] in,
-        input wire [(INPUT_SIZE)-1:0][7:0] weights,
-        output reg [(INPUT_SIZE)-1:0][7:0] out
+        input wire [(INPUT_SIZE)-1:0][15:0] weights,
+        output reg [(INPUT_SIZE)-1:0][15:0] out
     );
-    logic [31:0] R_311ceb95_i;
-    logic [31:0] RR_311ceb95_i;
-    logic [(INPUT_SIZE)-1:0][7:0] temp;
+    logic [31:0] R_25ca7e94_i;
+    logic [31:0] RR_25ca7e94_i;
+    logic [(INPUT_SIZE)-1:0][15:0] temp;
     always @* begin
-        for (RR_311ceb95_i = 0; RR_311ceb95_i < INPUT_SIZE; RR_311ceb95_i = RR_311ceb95_i + 1) begin
-      R_311ceb95_i = (0) + RR_311ceb95_i * (1);
-            temp[R_311ceb95_i] = (4'h8)'($signed(in[R_311ceb95_i])) & weights[R_311ceb95_i];
+        for (RR_25ca7e94_i = 0; RR_25ca7e94_i < INPUT_SIZE; RR_25ca7e94_i = RR_25ca7e94_i + 1) begin
+      R_25ca7e94_i = (0) + RR_25ca7e94_i * (1);
+            temp[R_25ca7e94_i] = (5'h10)'($signed(in[R_25ca7e94_i])) & weights[R_25ca7e94_i];
         end
         out = temp;
     end

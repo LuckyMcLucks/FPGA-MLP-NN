@@ -5,19 +5,19 @@
 */
 
 module sigmoid (
-        input wire [7:0] x,
-        output reg [7:0] out
+        input wire [15:0] x,
+        output reg [15:0] out
     );
-    logic [7:0] y;
+    logic [15:0] y;
     localparam M = 3'h4;
     localparam C = 6'h32;
     always @* begin
-        if (x[3'h7] == 1'h0) begin
+        if (x[4'hf] == 1'h0) begin
             y = (($bits(x / 3'h4) > $bits(6'h32) ? $bits(x / 3'h4) : $bits(6'h32)) + 1)'(x / 3'h4 + 6'h32);
         end else begin
             y = (($bits(-(-x / 3'h4)) > $bits(6'h32) ? $bits(-(-x / 3'h4)) : $bits(6'h32)) + 1)'(-(-x / 3'h4) + 6'h32);
         end
-        if (x[3'h7] == 1'h1) begin
+        if (x[4'hf] == 1'h1) begin
             if (-x >= 8'h96) begin
                 y = 3'h5;
             end
