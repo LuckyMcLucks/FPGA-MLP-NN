@@ -12,14 +12,14 @@ module hidden_neuron #(
         input wire signed [(INPUT_SIZE)-1:0][15:0] weights,
         output reg [(INPUT_SIZE)-1:0][31:0] out
     );
-    logic [31:0] R_466c4d8d_i;
-    logic [31:0] RR_466c4d8d_i;
+    logic [31:0] R_158f8109_i;
+    logic [31:0] RR_158f8109_i;
     logic signed [(INPUT_SIZE)-1:0][31:0] temp;
     logic signed [(INPUT_SIZE)-1:0][15:0] temp2;
     always @* begin
-        for (RR_466c4d8d_i = 0; RR_466c4d8d_i < INPUT_SIZE; RR_466c4d8d_i = RR_466c4d8d_i + 1) begin
-      R_466c4d8d_i = (0) + RR_466c4d8d_i * (1);
-            temp[R_466c4d8d_i] = (($bits(weights[R_466c4d8d_i])+$bits(in[R_466c4d8d_i]))'(weights[R_466c4d8d_i] * in[R_466c4d8d_i]));
+        for (RR_158f8109_i = 0; RR_158f8109_i < INPUT_SIZE; RR_158f8109_i = RR_158f8109_i + 1) begin
+      R_158f8109_i = (0) + RR_158f8109_i * (1);
+            temp[R_158f8109_i] = (($bits(weights[R_158f8109_i])+$bits(in[R_158f8109_i]))'(weights[R_158f8109_i] * in[R_158f8109_i]));
         end
         out = $signed(temp);
     end

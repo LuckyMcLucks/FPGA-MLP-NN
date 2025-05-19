@@ -22,12 +22,12 @@ module alchitry_top (
     );
     
     
-    localparam _MP_STAGES_478095159 = 3'h4;
+    localparam _MP_STAGES_1746191062 = 3'h4;
     logic M_reset_cond_in;
     logic M_reset_cond_out;
     
     reset_conditioner #(
-        .STAGES(_MP_STAGES_478095159)
+        .STAGES(_MP_STAGES_1746191062)
     ) reset_cond (
         .clk(M_slow_clock_clk_out10),
         .in(M_reset_cond_in),
@@ -37,31 +37,33 @@ module alchitry_top (
     
     logic [7:0] D_data_d, D_data_q = 0;
     logic [27:0][27:0][0:0] M_mlp_in;
+    logic [3:0] M_mlp_out;
     logic [15:0][15:0] M_mlp_relu1_;
     logic [15:0][15:0] M_mlp_adder1_;
-    logic [15:0] M_mlp_out;
-    logic [9:0][31:0] M_mlp_adder3_;
+    logic [9:0][31:0] M_mlp_sigmoid2_;
+    logic [9:0][31:0] M_mlp_adder2_;
     
     mlp_module mlp (
         .clk(M_slow_clock_clk_out10),
         .rst(rst),
         .in(M_mlp_in),
+        .out(M_mlp_out),
         .relu1_(M_mlp_relu1_),
         .adder1_(M_mlp_adder1_),
-        .out(M_mlp_out),
-        .adder3_(M_mlp_adder3_)
+        .sigmoid2_(M_mlp_sigmoid2_),
+        .adder2_(M_mlp_adder2_)
     );
     
     
-    localparam _MP_CLK_FREQ_1913914019 = 27'h5f5e100;
-    localparam _MP_BAUD_1913914019 = 14'h2580;
+    localparam _MP_CLK_FREQ_84351661 = 27'h5f5e100;
+    localparam _MP_BAUD_84351661 = 14'h2580;
     logic M_rx_rx;
     logic [7:0] M_rx_data;
     logic M_rx_new_data;
     
     uart_rx #(
-        .CLK_FREQ(_MP_CLK_FREQ_1913914019),
-        .BAUD(_MP_BAUD_1913914019)
+        .CLK_FREQ(_MP_CLK_FREQ_84351661),
+        .BAUD(_MP_BAUD_84351661)
     ) rx (
         .clk(M_slow_clock_clk_out10),
         .rst(rst),
@@ -71,8 +73,8 @@ module alchitry_top (
     );
     
     
-    localparam _MP_CLK_FREQ_2006843165 = 27'h5f5e100;
-    localparam _MP_BAUD_2006843165 = 14'h2580;
+    localparam _MP_CLK_FREQ_1773426534 = 27'h5f5e100;
+    localparam _MP_BAUD_1773426534 = 14'h2580;
     logic M_tx_tx;
     logic M_tx_block;
     logic M_tx_busy;
@@ -80,8 +82,8 @@ module alchitry_top (
     logic M_tx_new_data;
     
     uart_tx #(
-        .CLK_FREQ(_MP_CLK_FREQ_2006843165),
-        .BAUD(_MP_BAUD_2006843165)
+        .CLK_FREQ(_MP_CLK_FREQ_1773426534),
+        .BAUD(_MP_BAUD_1773426534)
     ) tx (
         .clk(M_slow_clock_clk_out10),
         .rst(rst),
@@ -115,10 +117,13 @@ module alchitry_top (
                 io_led[1'h1:1'h0] = {M_mlp_relu1_[io_dip[1'h0]][4'hf:4'h8], M_mlp_relu1_[io_dip[1'h0]][3'h7:1'h0]};
             end
             2'h3: begin
-                io_led[1'h1:1'h0] = {M_mlp_adder3_[io_dip[1'h0]][5'h1f:5'h18], M_mlp_adder3_[io_dip[1'h0]][5'h17:5'h10]};
+                io_led = {M_mlp_sigmoid2_[io_dip[1'h0]][5'h17:5'h10], M_mlp_sigmoid2_[io_dip[1'h0]][5'h1f:5'h18], M_mlp_sigmoid2_[io_dip[1'h0]][5'h17:5'h10]};
             end
             3'h4: begin
                 io_led[1'h1:1'h0] = {M_mlp_adder1_[io_dip[1'h0]][4'hf:4'h8], M_mlp_adder1_[io_dip[1'h0]][3'h7:1'h0]};
+            end
+            3'h5: begin
+                io_led = {M_mlp_adder2_[io_dip[1'h0]][5'h17:5'h10], M_mlp_adder2_[io_dip[1'h0]][4'hf:4'h8], M_mlp_adder2_[io_dip[1'h0]][3'h7:1'h0]};
             end
             default: begin
                 io_led = {{8'h0, 8'h0, 8'h0}};

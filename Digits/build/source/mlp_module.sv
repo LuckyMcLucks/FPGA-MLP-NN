@@ -8,13 +8,14 @@ module mlp_module (
         input wire clk,
         input wire rst,
         input wire [27:0][27:0][0:0] in,
+        output reg [3:0] out,
         output reg [15:0][15:0] relu1_,
         output reg [15:0][15:0] adder1_,
-        output reg [15:0] out,
-        output reg [9:0][31:0] adder3_
+        output reg [9:0][31:0] sigmoid2_,
+        output reg [9:0][31:0] adder2_
     );
-    localparam _MP_SIZE_2043118135 = 10'h310;
-    localparam _MP_INTEGER_SIZE_2043118135 = 5'h10;
+    localparam _MP_SIZE_1254426041 = 10'h310;
+    localparam _MP_INTEGER_SIZE_1254426041 = 5'h10;
     logic signed [15:0][783:0][15:0] M_adder1_array;
     logic signed [15:0][15:0] M_adder1_out;
     logic signed [15:0][15:0] M_adder1_bias;
@@ -22,28 +23,28 @@ module mlp_module (
     logic [15:0] M_adder1_start;
     logic [15:0] M_adder1_ready;
     
-    genvar idx_0_2043118135;
+    genvar idx_0_1254426041;
     
     generate
-        for (idx_0_2043118135 = 0; idx_0_2043118135 < 16; idx_0_2043118135 = idx_0_2043118135 + 1) begin: forLoop_idx_0_2043118135
+        for (idx_0_1254426041 = 0; idx_0_1254426041 < 16; idx_0_1254426041 = idx_0_1254426041 + 1) begin: forLoop_idx_0_1254426041
             looping_carry_save #(
-                .SIZE(_MP_SIZE_2043118135),
-                .INTEGER_SIZE(_MP_INTEGER_SIZE_2043118135)
+                .SIZE(_MP_SIZE_1254426041),
+                .INTEGER_SIZE(_MP_INTEGER_SIZE_1254426041)
             ) adder1 (
                 .clk(clk),
-                .array(M_adder1_array[idx_0_2043118135]),
-                .out(M_adder1_out[idx_0_2043118135]),
-                .bias(M_adder1_bias[idx_0_2043118135]),
-                .in(M_adder1_in[idx_0_2043118135]),
-                .start(M_adder1_start[idx_0_2043118135]),
-                .ready(M_adder1_ready[idx_0_2043118135])
+                .array(M_adder1_array[idx_0_1254426041]),
+                .out(M_adder1_out[idx_0_1254426041]),
+                .bias(M_adder1_bias[idx_0_1254426041]),
+                .in(M_adder1_in[idx_0_1254426041]),
+                .start(M_adder1_start[idx_0_1254426041]),
+                .ready(M_adder1_ready[idx_0_1254426041])
             );
         end
     endgenerate
     
     
-    localparam _MP_SIZE_628266401 = 5'h10;
-    localparam _MP_INTEGER_SIZE_628266401 = 6'h20;
+    localparam _MP_SIZE_1223020928 = 5'h10;
+    localparam _MP_INTEGER_SIZE_1223020928 = 6'h20;
     logic signed [9:0][15:0][31:0] M_adder3_array;
     logic signed [9:0][31:0] M_adder3_out;
     logic signed [9:0][31:0] M_adder3_bias;
@@ -51,63 +52,63 @@ module mlp_module (
     logic [9:0] M_adder3_start;
     logic [9:0] M_adder3_ready;
     
-    genvar idx_0_628266401;
+    genvar idx_0_1223020928;
     
     generate
-        for (idx_0_628266401 = 0; idx_0_628266401 < 10; idx_0_628266401 = idx_0_628266401 + 1) begin: forLoop_idx_0_628266401
+        for (idx_0_1223020928 = 0; idx_0_1223020928 < 10; idx_0_1223020928 = idx_0_1223020928 + 1) begin: forLoop_idx_0_1223020928
             looping_carry_save #(
-                .SIZE(_MP_SIZE_628266401),
-                .INTEGER_SIZE(_MP_INTEGER_SIZE_628266401)
+                .SIZE(_MP_SIZE_1223020928),
+                .INTEGER_SIZE(_MP_INTEGER_SIZE_1223020928)
             ) adder3 (
                 .clk(clk),
-                .array(M_adder3_array[idx_0_628266401]),
-                .out(M_adder3_out[idx_0_628266401]),
-                .bias(M_adder3_bias[idx_0_628266401]),
-                .in(M_adder3_in[idx_0_628266401]),
-                .start(M_adder3_start[idx_0_628266401]),
-                .ready(M_adder3_ready[idx_0_628266401])
+                .array(M_adder3_array[idx_0_1223020928]),
+                .out(M_adder3_out[idx_0_1223020928]),
+                .bias(M_adder3_bias[idx_0_1223020928]),
+                .in(M_adder3_in[idx_0_1223020928]),
+                .start(M_adder3_start[idx_0_1223020928]),
+                .ready(M_adder3_ready[idx_0_1223020928])
             );
         end
     endgenerate
     
     
-    localparam _MP_INPUT_SIZE_1003378745 = 10'h310;
+    localparam _MP_INPUT_SIZE_1871527480 = 10'h310;
     logic [15:0][783:0] M_input_layer_in;
     logic [15:0][783:0][15:0] M_input_layer_weights;
     logic [15:0][783:0][15:0] M_input_layer_out;
     
-    genvar idx_0_1003378745;
+    genvar idx_0_1871527480;
     
     generate
-        for (idx_0_1003378745 = 0; idx_0_1003378745 < 16; idx_0_1003378745 = idx_0_1003378745 + 1) begin: forLoop_idx_0_1003378745
+        for (idx_0_1871527480 = 0; idx_0_1871527480 < 16; idx_0_1871527480 = idx_0_1871527480 + 1) begin: forLoop_idx_0_1871527480
             input_neuron #(
-                .INPUT_SIZE(_MP_INPUT_SIZE_1003378745)
+                .INPUT_SIZE(_MP_INPUT_SIZE_1871527480)
             ) input_layer (
                 .clk(clk),
-                .in(M_input_layer_in[idx_0_1003378745]),
-                .weights(M_input_layer_weights[idx_0_1003378745]),
-                .out(M_input_layer_out[idx_0_1003378745])
+                .in(M_input_layer_in[idx_0_1871527480]),
+                .weights(M_input_layer_weights[idx_0_1871527480]),
+                .out(M_input_layer_out[idx_0_1871527480])
             );
         end
     endgenerate
     
     
-    localparam _MP_INPUT_SIZE_1063959539 = 5'h10;
+    localparam _MP_INPUT_SIZE_410701040 = 5'h10;
     logic signed [9:0][15:0][15:0] M_output_layer_in;
     logic signed [9:0][15:0][15:0] M_output_layer_weights;
     logic [9:0][15:0][31:0] M_output_layer_out;
     
-    genvar idx_0_1063959539;
+    genvar idx_0_410701040;
     
     generate
-        for (idx_0_1063959539 = 0; idx_0_1063959539 < 10; idx_0_1063959539 = idx_0_1063959539 + 1) begin: forLoop_idx_0_1063959539
+        for (idx_0_410701040 = 0; idx_0_410701040 < 10; idx_0_410701040 = idx_0_410701040 + 1) begin: forLoop_idx_0_410701040
             output_neuron #(
-                .INPUT_SIZE(_MP_INPUT_SIZE_1063959539)
+                .INPUT_SIZE(_MP_INPUT_SIZE_410701040)
             ) output_layer (
                 .clk(clk),
-                .in(M_output_layer_in[idx_0_1063959539]),
-                .weights(M_output_layer_weights[idx_0_1063959539]),
-                .out(M_output_layer_out[idx_0_1063959539])
+                .in(M_output_layer_in[idx_0_410701040]),
+                .weights(M_output_layer_weights[idx_0_410701040]),
+                .out(M_output_layer_out[idx_0_410701040])
             );
         end
     endgenerate
@@ -124,11 +125,11 @@ module mlp_module (
     );
     
     
+    logic [3:0] D_state_d, D_state_q = 0;
     localparam E_States_DEFAULT = 2'h0;
     localparam E_States_LAYER1 = 2'h1;
     localparam E_States_LAYER2 = 2'h2;
     localparam E_States_LAYER3 = 2'h3;
-    logic [1:0] D_state_d, D_state_q = 2'h0;
     logic [15:0][783:0][15:0] M_weights_out1;
     logic [15:0][15:0] M_weights_out2;
     
@@ -147,19 +148,34 @@ module mlp_module (
     );
     
     
-    localparam _MP_LENGTH_576714169 = 5'h10;
+    localparam _MP_LENGTH_2060147532 = 5'h10;
     logic [15:0][15:0] M_relu_value;
     logic [15:0][15:0] M_relu_out;
     
-    genvar idx_0_576714169;
+    genvar idx_0_2060147532;
     
     generate
-        for (idx_0_576714169 = 0; idx_0_576714169 < 16; idx_0_576714169 = idx_0_576714169 + 1) begin: forLoop_idx_0_576714169
+        for (idx_0_2060147532 = 0; idx_0_2060147532 < 16; idx_0_2060147532 = idx_0_2060147532 + 1) begin: forLoop_idx_0_2060147532
             relu #(
-                .LENGTH(_MP_LENGTH_576714169)
+                .LENGTH(_MP_LENGTH_2060147532)
             ) relu (
-                .value(M_relu_value[idx_0_576714169]),
-                .out(M_relu_out[idx_0_576714169])
+                .value(M_relu_value[idx_0_2060147532]),
+                .out(M_relu_out[idx_0_2060147532])
+            );
+        end
+    endgenerate
+    
+    
+    logic [9:0][31:0] M_sigmoid_x;
+    logic [9:0][31:0] M_sigmoid_out;
+    
+    genvar idx_0_387057133;
+    
+    generate
+        for (idx_0_387057133 = 0; idx_0_387057133 < 10; idx_0_387057133 = idx_0_387057133 + 1) begin: forLoop_idx_0_387057133
+            sigmoid sigmoid (
+                .x(M_sigmoid_x[idx_0_387057133]),
+                .out(M_sigmoid_out[idx_0_387057133])
             );
         end
     endgenerate
@@ -177,13 +193,15 @@ module mlp_module (
         M_adder3_array = M_output_layer_out;
         M_output_layer_weights = M_w3_w;
         M_adder3_bias = M_w3_b;
-        M_pooling_in = $signed(M_adder3_out);
-        relu1_ = M_relu_out;
-        out = M_pooling_out;
-        adder1_ = $signed(M_adder1_out);
+        M_sigmoid_x = $signed(M_adder3_out);
+        M_pooling_in = M_sigmoid_out;
         M_adder1_start = 16'h0;
+        adder1_ = $signed(M_adder1_out);
+        adder2_ = $signed(M_adder3_out);
+        relu1_ = M_relu_out;
+        sigmoid2_ = M_sigmoid_out;
         M_adder3_start = 10'h0;
-        adder3_ = $signed(M_adder3_out);
+        out = M_pooling_out;
         
         case (D_state_q)
             2'h0: begin

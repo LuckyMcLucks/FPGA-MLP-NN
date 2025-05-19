@@ -10,14 +10,14 @@ module arbiter #(
         input wire [(WIDTH)-1:0] in,
         output reg [(WIDTH)-1:0] out
     );
-    logic [31:0] R_718559a3_i;
-    logic [31:0] RR_718559a3_i;
+    logic [31:0] R_4678d8b7_i;
+    logic [31:0] RR_4678d8b7_i;
     always @* begin
         out = 1'h0;
-        for (RR_718559a3_i = 0; RR_718559a3_i < WIDTH; RR_718559a3_i = RR_718559a3_i + 1) begin
-      R_718559a3_i = (0) + RR_718559a3_i * (1);
-            if (in[R_718559a3_i]) begin
-                out = ($bits(1'h1)+(2**$bits(R_718559a3_i)-1))'(1'h1 << R_718559a3_i);
+        for (RR_4678d8b7_i = 0; RR_4678d8b7_i < WIDTH; RR_4678d8b7_i = RR_4678d8b7_i + 1) begin
+      R_4678d8b7_i = (0) + RR_4678d8b7_i * (1);
+            if (in[R_4678d8b7_i]) begin
+                out = ($bits(1'h1)+(2**$bits(R_4678d8b7_i)-1))'(1'h1 << R_4678d8b7_i);
             end
         end
     end

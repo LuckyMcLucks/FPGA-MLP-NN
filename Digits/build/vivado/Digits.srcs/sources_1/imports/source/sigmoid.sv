@@ -5,25 +5,32 @@
 */
 
 module sigmoid (
-        input wire [15:0] x,
-        output reg [15:0] out
+        input wire [31:0] x,
+        output reg [31:0] out
     );
-    logic [15:0] y;
+    logic [31:0] y;
     localparam M = 3'h4;
-    localparam C = 6'h32;
+    localparam C = 12'h800;
     always @* begin
-        if (x[4'hf] == 1'h0) begin
-            y = (($bits(x / 3'h4) > $bits(6'h32) ? $bits(x / 3'h4) : $bits(6'h32)) + 1)'(x / 3'h4 + 6'h32);
-        end else begin
-            y = (($bits(-(-x / 3'h4)) > $bits(6'h32) ? $bits(-(-x / 3'h4)) : $bits(6'h32)) + 1)'(-(-x / 3'h4) + 6'h32);
-        end
-        if (x[4'hf] == 1'h1) begin
-            if (-x >= 8'h96) begin
-                y = 3'h5;
+        if (x[5'h1f] == 1'h0) begin
+            if (x > 14'h3faa) begin
+                y = 13'h1000;
+            end else begin
+                if (x > 13'h1555) begin
+                    y = (($bits(x / 5'h10) > $bits(12'hc00) ? $bits(x / 5'h10) : $bits(12'hc00)) + 1)'(x / 5'h10 + 12'hc00);
+                end else begin
+                    y = (($bits(x / 3'h4) > $bits(12'h800) ? $bits(x / 3'h4) : $bits(12'h800)) + 1)'(x / 3'h4 + 12'h800);
+                end
             end
         end else begin
-            if (x >= 8'h96) begin
-                y = 7'h5f;
+            if (x < -15'sh3faa) begin
+                y = 1'h0;
+            end else begin
+                if (-x > 13'h1555) begin
+                    y = (($bits(-(-x / 5'h10)) > $bits(11'h400) ? $bits(-(-x / 5'h10)) : $bits(11'h400)) + 1)'(-(-x / 5'h10) + 11'h400);
+                end else begin
+                    y = (($bits(-(-x / 3'h4)) > $bits(12'h800) ? $bits(-(-x / 3'h4)) : $bits(12'h800)) + 1)'(-(-x / 3'h4) + 12'h800);
+                end
             end
         end
         out = y;

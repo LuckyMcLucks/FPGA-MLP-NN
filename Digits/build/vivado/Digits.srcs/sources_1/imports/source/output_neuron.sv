@@ -12,13 +12,13 @@ module output_neuron #(
         input wire signed [(INPUT_SIZE)-1:0][15:0] weights,
         output reg [(INPUT_SIZE)-1:0][31:0] out
     );
-    logic [31:0] R_299cdd7e_i;
-    logic [31:0] RR_299cdd7e_i;
+    logic [31:0] R_21ec8b61_i;
+    logic [31:0] RR_21ec8b61_i;
     logic [(INPUT_SIZE)-1:0][31:0] temp;
     always @* begin
-        for (RR_299cdd7e_i = 0; RR_299cdd7e_i < INPUT_SIZE; RR_299cdd7e_i = RR_299cdd7e_i + 1) begin
-      R_299cdd7e_i = (0) + RR_299cdd7e_i * (1);
-            temp[R_299cdd7e_i] = ($bits(weights[R_299cdd7e_i])+$bits(in[R_299cdd7e_i]))'(weights[R_299cdd7e_i] * in[R_299cdd7e_i]);
+        for (RR_21ec8b61_i = 0; RR_21ec8b61_i < INPUT_SIZE; RR_21ec8b61_i = RR_21ec8b61_i + 1) begin
+      R_21ec8b61_i = (0) + RR_21ec8b61_i * (1);
+            temp[R_21ec8b61_i] = ($bits(weights[R_21ec8b61_i])+$bits(in[R_21ec8b61_i]))'(weights[R_21ec8b61_i] * in[R_21ec8b61_i]);
         end
         out = temp;
     end

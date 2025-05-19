@@ -77,9 +77,11 @@ module alchitry_top (
             2:
                 io_led[1:0]  = {mlp.relu1_[io_dip[0]][15:8],mlp.relu1_[io_dip[0]][7:0]}  
             3:
-                io_led[1:0]  = {mlp.adder3_[io_dip[0]][31:24],mlp.adder3_[io_dip[0]][23:16]}         
+                io_led  = {mlp.sigmoid2_[io_dip[0]][23:16],mlp.sigmoid2_[io_dip[0]][31:24],mlp.sigmoid2_[io_dip[0]][23:16]}         
             4:
                 io_led[1:0]  = {mlp.adder1_[io_dip[0]][15:8],mlp.adder1_[io_dip[0]][7:0]}
+            5:
+                io_led  = {mlp.adder2_[io_dip[0]][23:16],mlp.adder2_[io_dip[0]][15:8],mlp.adder2_[io_dip[0]][7:0]}
             
             default:
             io_led =3x{{8b0}}

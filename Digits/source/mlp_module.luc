@@ -2,7 +2,12 @@ module mlp_module (
     input clk,  // clock
     input rst,  // reset
     input in [28][28][1],
-    output out[4]
+    output out[4],
+    output relu1_[16][16],
+    output adder1_[16][16],
+    output sigmoid2_[10][32],
+    output adder2_[10][32]
+    
 ) {
     
     .clk(clk){    
@@ -11,7 +16,10 @@ module mlp_module (
             }
 
         #SIZE(16){
-        looping_carry_save adder3 [10] 
+            #INTEGER_SIZE(32){
+             looping_carry_save adder3 [10] 
+            }
+       
             }
         #INPUT_SIZE(784){
            input_neuron input_layer[16] 
@@ -21,10 +29,11 @@ module mlp_module (
            output_neuron output_layer[10] 
         }
         choose pooling(.rst(rst))
+        dff state[4]  
         
     }
     enum States{DEFAULT,LAYER1,LAYER2,LAYER3}
-    dff state$width(States),.clk(clk))    
+     
     weights weights
     layer3 w3
     relu relu[16] 
@@ -47,7 +56,10 @@ module mlp_module (
         pooling.in = sigmoid.out
         
         adder1.start = 16h0
-
+        adder1_ = adder1.out
+        adder2_ =adder3.out
+        relu1_ = relu.out
+        sigmoid2_ =sigmoid.out
         adder3.start = 10h0
         out = pooling.out
         case (state.q){

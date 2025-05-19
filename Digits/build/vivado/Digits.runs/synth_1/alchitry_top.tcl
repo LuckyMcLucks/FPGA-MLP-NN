@@ -95,6 +95,7 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/output_neuron.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/relu.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/reset_conditioner.sv
+  C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/sigmoid.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/uart_rx.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/uart_tx.sv
   C:/Users/weiya/OneDrive/Desktop/Github/Assembly-AI/Digits/build/vivado/Digits.srcs/sources_1/imports/source/weights.sv

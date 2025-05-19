@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Fri May 16 20:53:34 2025
+| Date         : Sat May 17 16:26:28 2025
 | Host         : Ideapad_S340 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file alchitry_top_utilization_synth.rpt -pb alchitry_top_utilization_synth.pb
 | Design       : alchitry_top
@@ -28,18 +28,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+------------+-----------+-------+
-|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
-+-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 5989 |     0 |          0 |     20800 | 28.79 |
-|   LUT as Logic          | 5989 |     0 |          0 |     20800 | 28.79 |
-|   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |  877 |     0 |          0 |     41600 |  2.11 |
-|   Register as Flip Flop |  877 |     0 |          0 |     41600 |  2.11 |
-|   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
-| F7 Muxes                |  820 |     0 |          0 |     16300 |  5.03 |
-| F8 Muxes                |  177 |     0 |          0 |      8150 |  2.17 |
-+-------------------------+------+-------+------------+-----------+-------+
++-------------------------+-------+-------+------------+-----------+-------+
+|        Site Type        |  Used | Fixed | Prohibited | Available | Util% |
++-------------------------+-------+-------+------------+-----------+-------+
+| Slice LUTs*             | 13555 |     0 |          0 |     20800 | 65.17 |
+|   LUT as Logic          | 13555 |     0 |          0 |     20800 | 65.17 |
+|   LUT as Memory         |     0 |     0 |          0 |      9600 |  0.00 |
+| Slice Registers         |   877 |     0 |          0 |     41600 |  2.11 |
+|   Register as Flip Flop |   877 |     0 |          0 |     41600 |  2.11 |
+|   Register as Latch     |     0 |     0 |          0 |     41600 |  0.00 |
+| F7 Muxes                |  1442 |     0 |          0 |     16300 |  8.85 |
+| F8 Muxes                |   366 |     0 |          0 |      8150 |  4.49 |
++-------------------------+-------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
 
@@ -149,16 +149,16 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 3227 |                 LUT |
-| LUT2     | 1563 |                 LUT |
+| LUT6     | 6099 |                 LUT |
+| LUT2     | 4265 |                 LUT |
+| LUT3     | 2707 |                 LUT |
+| CARRY4   | 2541 |          CarryLogic |
+| LUT4     | 1476 |                 LUT |
+| MUXF7    | 1442 |               MuxFx |
+| LUT1     |  984 |                 LUT |
 | FDRE     |  873 |        Flop & Latch |
-| LUT3     |  867 |                 LUT |
-| MUXF7    |  820 |               MuxFx |
-| CARRY4   |  799 |          CarryLogic |
-| LUT4     |  503 |                 LUT |
-| LUT5     |  473 |                 LUT |
-| LUT1     |  326 |                 LUT |
-| MUXF8    |  177 |               MuxFx |
+| LUT5     |  685 |                 LUT |
+| MUXF8    |  366 |               MuxFx |
 | DSP48E1  |   90 |    Block Arithmetic |
 | OBUF     |   33 |                  IO |
 | IBUF     |   14 |                  IO |

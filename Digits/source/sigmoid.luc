@@ -5,26 +5,34 @@ module sigmoid (
 ) {
     sig y[32]
     const M = 4
-    const C = 50
+    const C = 2048
+    
     always {
         
         
         if (x[31]==0){
-            y = x/M+ C
+            if( x> 16298){
+                y = 4096
+            }
+        else if (x>5461){
+                y =x/16+3072
+            } else{
+               y = x/M+ C 
+            }
+            
             
         }else{
-            y= -(-x/M)+C
+            if( x< -16298){
+                y = 0
+            }
+        else if (-x>5461){
+                y = -(-x/16)+1024
+            } else{
+                y= -(-x/M)+C 
+            }
+           
             
             
-        }
-        if (x[31] ==1){
-          if(-x >=d150){
-            y = 5
-        }  
-        }else{
-        if(x >=d150){
-            y = 95
-        }
         }
         
          
